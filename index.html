@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <script>
+      const searchString = window.location.search
+      const urlParams = new URLSearchParams(searchString)
+      const q = urlParams.get('q')
+
+      if (q) {
+
+        const bang = q.match(/!([^ ]+)/)
+        if (bang) {
+          const engine = bang[1]
+          const query = q.replace(bang[0], '')
+          if (engine === 'g') {
+            window.location.href = `https://www.google.com/search?q=${query}`
+          } else if (engine === 'b') {
+            window.location.href = `https://www.bing.com/search?q=${query}`
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>BangSearch</h1>
+    <p>
+      Duckduckgo's bang search engine
+      add this url as your default search engine
+    </p>
+    <input type="text" id="search" disabled value="https://bang-search.jonathanoldenburg.github.io?q=%s" />
+</html>
