@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>🔎 Bang Search Redirector</title>
+    </head>
+    <body>
+        <h1>🔎 Bang Search Redirector</h1>
+
+        <p>
+            I started watching this video
+            <a href="https://www.youtube.com/watch?v=_DnNzRaBWUU&t=737s">
+                i made my own search engine (kind of) </a
+            >, where he builds a similar webpage to use in any browser. Then I
+            challenge myself to build the same concept using github pages.
+        </p>
+
+        <h2>How to Use</h2>
+
+        <h3>Add as Custom Search Engine</h3>
+        <ol>
+            <li>
+                Go to your browser's <strong>Search Engine Settings</strong>.
+            </li>
+            <li>
+                Add a new search engine:
+                <ul>
+                    <li><strong>Name:</strong> Bang Search</li>
+                    <li>
+                        <strong>Keyword:</strong> <code>!</code> (or any you
+                        like)
+                    </li>
+                    <li>
+                        <strong>URL:</strong>
+                        <pre><code>https://bang-search.jonathanoldenburg.github.io?q=%s</code></pre>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <hr />
+
+        <h3>How to Search</h3>
+        <p>
+            Just use your query followed by a <strong>bang code</strong> (a
+            <code>!</code> plus a letter).<br />
+            Example:
+        </p>
+
+        <pre><code>how to train a falcon !g</code></pre>
+
+        <p>
+            This redirects you to Google with the search "<code
+                >how to train a falcon</code
+            >".
+        </p>
+
+        <hr />
+
+        <h2>Supported Bang Codes</h2>
+
+        <table border="1" cellspacing="0" cellpadding="4">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Engine</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>!g</code></td>
+                    <td>Google</td>
+                </tr>
+                <tr>
+                    <td><code>!b</code></td>
+                    <td>Bing</td>
+                </tr>
+                <tr>
+                    <td><code>!d</code></td>
+                    <td>DuckDuckGo</td>
+                </tr>
+                <tr>
+                    <td><code>!y</code></td>
+                    <td>Yahoo</td>
+                </tr>
+                <tr>
+                    <td><code>!s</code></td>
+                    <td>Startpage</td>
+                </tr>
+                <tr>
+                    <td><code>!q</code></td>
+                    <td>Qwant</td>
+                </tr>
+                <tr>
+                    <td><code>!e</code></td>
+                    <td>Ecosia</td>
+                </tr>
+                <tr>
+                    <td><code>!a</code></td>
+                    <td>AOL</td>
+                </tr>
+                <tr>
+                    <td><code>!w</code></td>
+                    <td>Wikipedia</td>
+                </tr>
+                <tr>
+                    <td><code>!r</code></td>
+                    <td>Reddit</td>
+                </tr>
+                <tr>
+                    <td><code>!h</code></td>
+                    <td>DuckDuckGo (HTML)</td>
+                </tr>
+                <tr>
+                    <td><code>!m</code></td>
+                    <td>MetaGer</td>
+                </tr>
+                <tr>
+                    <td><code>!n</code></td>
+                    <td>Neeva</td>
+                </tr>
+                <tr>
+                    <td><code>!z</code></td>
+                    <td>ZoomInfo</td>
+                </tr>
+                <tr>
+                    <td><code>!l</code></td>
+                    <td>LinkedIn</td>
+                </tr>
+                <tr>
+                    <td><code>!f</code></td>
+                    <td>Facebook</td>
+                </tr>
+                <tr>
+                    <td><code>!i</code></td>
+                    <td>Instagram</td>
+                </tr>
+                <tr>
+                    <td><code>!t</code></td>
+                    <td>Twitter / X</td>
+                </tr>
+                <tr>
+                    <td><code>!p</code></td>
+                    <td>Pinterest</td>
+                </tr>
+                <tr>
+                    <td><code>!u</code></td>
+                    <td>YouTube</td>
+                </tr>
+                <tr>
+                    <td><code>!c</code></td>
+                    <td>China Daily</td>
+                </tr>
+                <tr>
+                    <td><code>!j</code></td>
+                    <td>JSTOR</td>
+                </tr>
+                <tr>
+                    <td><code>!k</code></td>
+                    <td>Kagi</td>
+                </tr>
+                <tr>
+                    <td><code>!o</code></td>
+                    <td>Openverse</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <blockquote>
+            Example: <code>quantum entanglement !j</code> → Searches JSTOR for
+            academic papers on quantum entanglement.
+        </blockquote>
+
+        <h2>
+            Isn't there better options (built-in functionality or browser
+            extensions)?
+        </h2>
+        <p>
+            Yes! but this project was just meant to have fun and a little
+            challenge
+        </p>
+    </body>
+</html>
