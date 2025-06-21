@@ -4,6 +4,32 @@
         <title>Home</title>
         <script>
             function resulveUrl(q) {
+                const searchEngines = {
+                    g: "https://www.google.com/search?q=${query}", // Google
+                    b: "https://www.bing.com/search?q=${query}", // Bing
+                    d: "https://duckduckgo.com/?q=${query}", // DuckDuckGo
+                    y: "https://search.yahoo.com/search?p=${query}", // Yahoo
+                    s: "https://www.startpage.com/do/search?query=${query}", // Startpage
+                    q: "https://www.qwant.com/?q=${query}", // Qwant
+                    e: "https://www.ecosia.org/search?q=${query}", // Ecosia
+                    a: "https://search.aol.com/aol/search?q=${query}", // AOL
+                    w: "https://en.wikipedia.org/w/index.php?search=${query}", // Wikipedia
+                    r: "https://www.reddit.com/search/?q=${query}", // Reddit
+                    h: "https://html.duckduckgo.com/html/?q=${query}", // DuckDuckGo (HTML only)
+                    m: "https://metager.org/meta/meta.ger3?eingabe=${query}", // MetaGer
+                    n: "https://neeva.com/search?q=${query}", // Neeva (defunct, for completeness)
+                    z: "https://www.zoominfo.com/search?searchTerm=${query}", // ZoomInfo
+                    l: "https://www.linkedin.com/search/results/all/?keywords=${query}", // LinkedIn
+                    f: "https://www.facebook.com/search/top/?q=${query}", // Facebook
+                    i: "https://www.instagram.com/explore/tags/${query}/", // Instagram (tag search)
+                    t: "https://twitter.com/search?q=${query}", // Twitter / X
+                    p: "https://www.pinterest.com/search/pins/?q=${query}", // Pinterest
+                    u: "https://www.youtube.com/results?search_query=${query}", // YouTube
+                    c: "https://www.chinadaily.com.cn/search?query=${query}", // China Daily
+                    j: "https://www.jstor.org/action/doBasicSearch?Query=${query}", // JSTOR
+                    k: "https://kagi.com/search?q=${query}", // Kagi
+                    o: "https://www.openverse.org/search/?q=${query}", // Openverse (media search)
+                };
                 if (!q) {
                     return false;
                 }
@@ -24,36 +50,12 @@
             const urlParams = new URLSearchParams(searchString);
             const q = urlParams.get("q");
 
-            const searchEngines = {
-                g: "https://www.google.com/search?q=${query}", // Google
-                b: "https://www.bing.com/search?q=${query}", // Bing
-                d: "https://duckduckgo.com/?q=${query}", // DuckDuckGo
-                y: "https://search.yahoo.com/search?p=${query}", // Yahoo
-                s: "https://www.startpage.com/do/search?query=${query}", // Startpage
-                q: "https://www.qwant.com/?q=${query}", // Qwant
-                e: "https://www.ecosia.org/search?q=${query}", // Ecosia
-                a: "https://search.aol.com/aol/search?q=${query}", // AOL
-                w: "https://en.wikipedia.org/w/index.php?search=${query}", // Wikipedia
-                r: "https://www.reddit.com/search/?q=${query}", // Reddit
-                h: "https://html.duckduckgo.com/html/?q=${query}", // DuckDuckGo (HTML only)
-                m: "https://metager.org/meta/meta.ger3?eingabe=${query}", // MetaGer
-                n: "https://neeva.com/search?q=${query}", // Neeva (defunct, for completeness)
-                z: "https://www.zoominfo.com/search?searchTerm=${query}", // ZoomInfo
-                l: "https://www.linkedin.com/search/results/all/?keywords=${query}", // LinkedIn
-                f: "https://www.facebook.com/search/top/?q=${query}", // Facebook
-                i: "https://www.instagram.com/explore/tags/${query}/", // Instagram (tag search)
-                t: "https://twitter.com/search?q=${query}", // Twitter / X
-                p: "https://www.pinterest.com/search/pins/?q=${query}", // Pinterest
-                u: "https://www.youtube.com/results?search_query=${query}", // YouTube
-                c: "https://www.chinadaily.com.cn/search?query=${query}", // China Daily
-                j: "https://www.jstor.org/action/doBasicSearch?Query=${query}", // JSTOR
-                k: "https://kagi.com/search?q=${query}", // Kagi
-                o: "https://www.openverse.org/search/?q=${query}", // Openverse (media search)
-            };
-
             if (!resulveUrl(q)) {
+                const splittedPath = window.location.pathname.split("/");
+                splittedPath.pop();
+                splittedPath.push("wellcome.html");
                 window.location.href =
-                    window.location.origin + "/wellcome.html";
+                    window.location.origin + splittedPath.join("/");
             }
         </script>
     </head>
