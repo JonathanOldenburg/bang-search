@@ -45,6 +45,7 @@
                     return false;
                 }
                 window.location.href = chosenSearch.replace("${query}", query);
+                return true;
             }
             const searchString = window.location.search;
             const urlParams = new URLSearchParams(searchString);
