@@ -33,13 +33,17 @@
                 if (!q) {
                     return false;
                 }
-                if (!q.includes("!")) {
-                    return false;
-                }
                 const bang = q.match(/!([^ ]+)/);
 
-                const engine = bang[1];
-                const query = q.replace(bang[0], "");
+                let engine;
+                let query;
+                if (bang) {
+                    engine = bang[1];
+                    query = q.replace(bang[0], "");
+                } else {
+                    engine = 'g';
+                    query = q;
+                }
                 const chosenSearch = searchEngines[engine];
                 if (!chosenSearch) {
                     return false;
